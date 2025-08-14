@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>JS 1회차 - FAQ 토글</title>
+  <script defer src="app.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      line-height: 1.6;
+    }
+    .faq-item {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+    .faq-question {
+      cursor: pointer;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+    }
+    .faq-answer {
+      display: none;
+      margin-top: 8px;
+      color: #555;
+    }
+    .faq-answer.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>FAQ 예제</h1>
+
+  <div class="faq-item">
+    <div class="faq-question" data-index="0">
+      Q1. JavaScript는 무엇인가요? <span>+</span>
+    </div>
+    <div class="faq-answer">
+      웹 페이지에 동적인 기능을 추가하는 프로그래밍 언어입니다.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" data-index="1">
+      Q2. HTML과의 차이는 무엇인가요? <span>+</span>
+    </div>
+    <div class="faq-answer">
+      HTML은 구조, CSS는 디자인, JavaScript는 동작을 담당합니다.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" data-index="2">
+      Q3. JavaScript를 어디서 실행하나요? <span>+</span>
+    </div>
+    <div class="faq-answer">
+      브라우저나 Node.js 환경에서 실행할 수 있습니다.
+    </div>
+  </div>
+</body>
+</html>

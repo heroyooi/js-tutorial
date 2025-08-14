@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>간단 계산기</title>
+  <script defer src="app.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 500px; margin: auto; }
+    input { padding: 8px; margin: 5px; width: 100px; }
+    button { padding: 8px; margin: 5px; }
+  </style>
+</head>
+<body>
+  <h1>간단 계산기</h1>
+  <input id="num1" type="number" placeholder="숫자 1" />
+  <input id="num2" type="number" placeholder="숫자 2" />
+  <div>
+    <button data-op="+">+</button>
+    <button data-op="-">-</button>
+    <button data-op="*">*</button>
+    <button data-op="/">/</button>
+    <button data-op="%">%</button>
+    <button data-op="**">**</button>
+  </div>
+  <p id="result"></p>
+</body>
+</html>
+
