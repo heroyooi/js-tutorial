@@ -1,13 +1,11 @@
-document.getElementById("runBtn").addEventListener("click", () => {
-  var a = 1;
-  let b = 2;
+const name = "홍길동";
+const age = 30;
+const city = "서울";
 
-  if (true) {
-    var a = 10; // 같은 함수 안에서 공유됨
-    let b = 20; // 블록 안에서만 유효
-    console.log("if 내부:", a, b); // 10, 20
-  }
+const cardHTML = `
+  <p>이름: ${name}</p>
+  <p>나이: ${age}</p>
+  <p>사는 곳: ${city}</p>
+`;
 
-  console.log("if 외부:", a, b); // 10, 2
-});
-
+document.getElementById("card").innerHTML = cardHTML;
