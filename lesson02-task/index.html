@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>JS 중급 2회차 – 과제(클로저)</title>
+  <script defer src="app.js"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 880px; margin: 48px auto; line-height: 1.7; }
+    h1 { margin-bottom: 0; }
+    .muted { color:#6b7280; margin-top: 4px; }
+    section { border:1px solid #e5e7eb; border-radius: 12px; padding: 16px; margin-top: 16px; }
+    input, button, select { padding: 8px; border-radius: 8px; border:1px solid #d1d5db; }
+    .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+    .stat { background:#f3f4f6; padding: 8px 12px; border-radius: 8px; display:inline-block; margin-right: 8px; }
+    .out { background:#111827; color:#e5e7eb; padding: 10px; border-radius: 10px; min-height: 36px; margin-top: 10px; white-space: pre-wrap;}
+  </style>
+</head>
+<body>
+  <h1>JS 중급 2회차 – 과제 풀이</h1>
+  <p class="muted">클로저로 상태를 은닉/유지하는 패턴을 실습합니다.</p>
+
+  <!-- 과제 1: 로그인 횟수 기록기 -->
+  <section>
+    <h2>① 로그인 횟수 기록기 (클로저)</h2>
+    <p class="muted">성공/실패 횟수를 외부에서 직접 수정할 수 없도록 <strong>캡슐화</strong>합니다.</p>
+    <div class="row">
+      <input id="email" type="email" placeholder="이메일 (예: user@example.com)">
+      <input id="pw" type="password" placeholder="비밀번호 (데모: 1234)">
+      <button id="loginBtn">로그인 시도</button>
+      <button id="resetLogin">초기화</button>
+    </div>
+    <div style="margin-top:10px;">
+      <span class="stat" id="statTotal">총 시도: 0</span>
+      <span class="stat" id="statSuccess">성공: 0</span>
+      <span class="stat" id="statFail">실패: 0</span>
+    </div>
+    <div class="out" id="loginOut"></div>
+  </section>
+
+  <!-- 과제 2: 랜덤 숫자 생성기 -->
+  <section>
+    <h2>② 랜덤 숫자 생성기 (클로저)</h2>
+    <p class="muted">버튼을 누를 때마다 새 숫자를 생성합니다. <strong>중복 허용/비허용</strong> 두 방식 제공.</p>
+    <div class="row">
+      <label>최솟값 <input id="min" type="number" value="1"></label>
+      <label>최댓값 <input id="max" type="number" value="10"></label>
+      <select id="mode">
+        <option value="any">중복 허용</option>
+        <option value="unique">중복 없이</option>
+      </select>
+      <button id="createGen">생성기 만들기/초기화</button>
+      <button id="nextNum">다음 숫자</button>
+    </div>
+    <div class="out" id="randOut"></div>
+  </section>
+</body>
+</html>
