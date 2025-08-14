@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>JS 6회차 – 과제</title>
+  <script defer src="app.js"></script>
+  <style>
+    body { font-family: sans-serif; max-width: 720px; margin: 48px auto; line-height: 1.7; }
+    input { margin: 4px 0; padding: 6px; }
+    button { margin-top: 8px; padding: 6px 12px; }
+    pre { background: #f5f5f5; padding: 12px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h1>JavaScript 6회차 – 과제 풀이</h1>
+
+  <h2>1. 온도 변환기</h2>
+  <input id="tempValue" type="number" placeholder="온도 입력" />
+  <select id="tempType">
+    <option value="cToF">섭씨 → 화씨</option>
+    <option value="fToC">화씨 → 섭씨</option>
+  </select>
+  <button id="convertBtn">변환</button>
+  <p id="tempResult"></p>
+
+  <h2>2. 배열 합계</h2>
+  <button id="sumBtn">[3, 6, 9, 12] 합계 구하기</button>
+  <p id="sumResult"></p>
+
+  <h2>3. 문자열 포맷</h2>
+  <input id="strValue" type="text" placeholder="문자열 입력" />
+  <input id="strLength" type="number" placeholder="최대 길이" />
+  <button id="formatBtn">포맷 적용</button>
+  <p id="strResult"></p>
+</body>
+</html>
