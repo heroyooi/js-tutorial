@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>lesson07 - 타이머 & 콜백 & this 과제 실습</title>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    h1 { margin-bottom: 8px; }
+    section { margin-bottom: 28px; }
+    pre {
+      background: #0b1020;
+      color: #d6e2ff;
+      padding: 10px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    button, input {
+      padding: 6px 12px;
+      margin-top: 4px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button:hover { background: #f3f3f3; }
+    .output {
+      margin-top: 8px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fafafa;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>lesson07 - 타이머 & 콜백 & this 과제 실습</h1>
+  <p>버튼 클릭 시 콘솔과 화면에 결과가 출력됩니다.</p>
+
+  <!-- 1) 타이머 취소 -->
+  <section>
+    <h2>1) 타이머 취소</h2>
+    <button id="cancel">취소</button>
+    <div class="output" id="out-task1"></div>
+  </section>
+
+  <!-- 2) 틱 다운 카운터 -->
+  <section>
+    <h2>2) 틱 다운 카운터</h2>
+    <input id="sec" type="number" value="5" min="1" />
+    <button id="start">시작</button>
+    <button id="pause">일시정지</button>
+    <button id="resume">재개</button>
+    <span id="view"></span>
+  </section>
+
+  <!-- 3) 콜백 기반 비동기 유틸 -->
+  <section>
+    <h2>3) 콜백 기반 비동기 유틸</h2>
+    <button id="btn-task3">실행</button>
+    <div class="output" id="out-task3"></div>
+  </section>
+
+  <!-- 4) this 안전하게 다루기 -->
+  <section>
+    <h2>4) this 안전하게 다루기 – Timer 클래스</h2>
+    <button id="startTimer">타이머 시작</button>
+    <button id="stopTimer">타이머 정지</button>
+    <div class="output" id="out-task4"></div>
+  </section>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
+

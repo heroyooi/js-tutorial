@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>lesson01 - ES6 과제 실습</title>
+  <title>lesson02 - 구조 분해 할당 과제 실습</title>
   <style>
     body { font-family: sans-serif; margin: 20px; }
-    h1 { margin-bottom: 4px; }
+    h1 { margin-bottom: 8px; }
+    section { margin-bottom: 28px; }
     pre {
       background: #0b1020;
       color: #d6e2ff;
@@ -32,42 +33,36 @@
   </style>
 </head>
 <body>
-  <h1>lesson01 - ES6 과제 실습</h1>
+  <h1>lesson02 - 구조 분해 할당 과제 실습</h1>
   <p>버튼을 클릭하면 콘솔과 화면에 결과가 출력됩니다.</p>
 
   <section>
-    <h2>1. let / const 구분하기</h2>
-    <pre><code>let age = 30;
-const name = "성연욱";
+    <h2>1. 배열 구조 분해</h2>
+    <pre><code>const skills = ["HTML", "CSS", "JavaScript"];
+const [first, , third] = skills;
 
-console.log(`이름: ${name}, 나이: ${age}`);
-
-age = 31;
-console.log(`변경된 나이: ${age}`);</code></pre>
+console.log(first); // HTML
+console.log(third); // JavaScript</code></pre>
     <button id="btn-task1">실행</button>
     <div class="output" id="out-task1"></div>
   </section>
 
   <section>
-    <h2>2. 템플릿 리터럴 응용</h2>
-    <pre><code>const userName = "민수";
-const userAge = 28;
+    <h2>2. 객체 구조 분해</h2>
+    <pre><code>const item = { product: "노트북", price: 1500000 };
+const { product, price } = item;
 
-console.log(`저는 ${userName}이고, 나이는 ${userAge}입니다.`);</code></pre>
+console.log(`상품: ${product}, 가격: ${price}원`);</code></pre>
     <button id="btn-task2">실행</button>
     <div class="output" id="out-task2"></div>
   </section>
 
   <section>
-    <h2>3. 화살표 함수 변환</h2>
-    <pre><code>function multiply(a, b) {
-  return a * b;
-}
+    <h2>3. 기본값 + 변수 이름 변경</h2>
+    <pre><code>const person = { name: "영희" };
+const { name: userName, age = 20 } = person;
 
-const multiplyArrow = (a, b) => a * b;
-
-console.log(multiply(3, 4));
-console.log(multiplyArrow(3, 4));</code></pre>
+console.log(`이름: ${userName}, 나이: ${age}`);</code></pre>
     <button id="btn-task3">실행</button>
     <div class="output" id="out-task3"></div>
   </section>
@@ -75,3 +70,4 @@ console.log(multiplyArrow(3, 4));</code></pre>
   <script type="module" src="./app.js"></script>
 </body>
 </html>
+

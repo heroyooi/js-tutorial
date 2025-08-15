@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>lesson05 - Symbol & Object 메서드 과제 실습</title>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    h1 { margin-bottom: 8px; }
+    section { margin-bottom: 28px; }
+    pre {
+      background: #0b1020;
+      color: #d6e2ff;
+      padding: 10px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    button {
+      padding: 6px 12px;
+      margin-top: 8px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button:hover { background: #f3f3f3; }
+    .output {
+      margin-top: 8px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fafafa;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>lesson05 - Symbol & Object 메서드 과제 실습</h1>
+  <p>버튼을 클릭하면 콘솔과 화면에 결과가 출력됩니다.</p>
+
+  <section>
+    <h2>1) Symbol</h2>
+    <pre><code>const userId = Symbol("userId");
+const user = { name: "홍길동", [userId]: 101 };
+
+console.log(user[userId]); // 101
+console.log(Object.keys(user)); // ["name"]</code></pre>
+    <button id="btn-task1">실행</button>
+    <div class="output" id="out-task1"></div>
+  </section>
+
+  <section>
+    <h2>2) Object.keys</h2>
+    <pre><code>const obj1 = { a: 1, b: 2, c: 3 };
+const keys = Object.keys(obj1);
+console.log(keys); // ["a", "b", "c"]</code></pre>
+    <button id="btn-task2">실행</button>
+    <div class="output" id="out-task2"></div>
+  </section>
+
+  <section>
+    <h2>3) Object.values</h2>
+    <pre><code>const obj2 = { name: "Tom", age: 25 };
+const values = Object.values(obj2);
+console.log(values); // ["Tom", 25]</code></pre>
+    <button id="btn-task3">실행</button>
+    <div class="output" id="out-task3"></div>
+  </section>
+
+  <section>
+    <h2>4) Object.entries & Object.fromEntries</h2>
+    <pre><code>const point = { x: 10, y: 20 };
+const entries = Object.entries(point);
+console.log(entries); // [["x", 10], ["y", 20]]
+const restored = Object.fromEntries(entries);
+console.log(restored); // { x: 10, y: 20 }</code></pre>
+    <button id="btn-task4">실행</button>
+    <div class="output" id="out-task4"></div>
+  </section>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
+

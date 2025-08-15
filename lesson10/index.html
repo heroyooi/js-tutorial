@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>lesson10 - 이벤트 심화 실습</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+    body { margin: 20px; line-height: 1.6; }
+    h1 { margin-bottom: 8px; }
+    section { margin: 24px 0; padding: 16px; border:1px solid #e5e7eb; border-radius: 12px; }
+    pre { background:#0b1020; color:#d6e2ff; padding:10px; border-radius:8px; overflow:auto; }
+    button, input[type="submit"] {
+      padding: 6px 12px; border:1px solid #cbd5e1; border-radius:8px; background:#fff; cursor:pointer;
+    }
+    button:hover, input[type="submit"]:hover { background:#f3f4f6; }
+    .hint { color:#6b7280; font-size: 14px; margin-top:6px; }
+    .log { background:#f8fafc; border:1px solid #e5e7eb; border-radius:8px; padding:8px; min-height:28px; white-space:pre-wrap; }
+    #todos { padding-left: 18px; }
+    #todos li.completed { color:#888; text-decoration: line-through; }
+    .btn-like { display:inline-block; padding:8px 12px; border:1px solid #cbd5e1; border-radius:8px; cursor:pointer; user-select:none; }
+    .btn-like.on { background:#ffe6a7; border-color:#f0c36d; }
+    #outer { padding:16px; border:2px solid #334155; }
+    #inner { margin-top:8px; padding:16px; border:2px solid #94a3b8; }
+    .tall { height:1500px; background:linear-gradient(#fff,#e5e7eb); border-radius:8px; }
+  </style>
+</head>
+<body>
+  <h1>lesson10 - 이벤트 심화 실습</h1>
+  <p class="hint">각 섹션의 버튼/입력을 사용해 보시고, 개발자도구 콘솔도 함께 확인해 보세요.</p>
+
+  <!-- 1) 이벤트 위임 – Todo 토글 -->
+  <section>
+    <h2>1) 이벤트 위임 – Todo 토글 (<code>.completed</code> 클래스)</h2>
+    <ul id="todos">
+      <li><label><input type="checkbox" class="done"> 빨래하기</label></li>
+      <li><label><input type="checkbox" class="done"> 장보기</label></li>
+    </ul>
+    <div class="hint">800ms 뒤 "코딩 연습" 항목이 동적 추가됩니다.</div>
+  </section>
+
+  <!-- 2) 폼 AJAX 제출 -->
+  <section>
+    <h2>2) 폼 AJAX 제출 (기본 동작 방지 + 버튼 비활성화/재활성화)</h2>
+    <form id="contact">
+      <input name="name" placeholder="이름" required />
+      <input name="email" type="email" placeholder="이메일" required />
+      <button type="submit" id="submitBtn">보내기</button>
+      <span id="status" class="hint" style="margin-left:8px;"></span>
+    </form>
+    <div class="hint">실습 편의를 위해 실제 API가 실패하면 자동으로 목업 전송으로 대체합니다.</div>
+  </section>
+
+  <!-- 3) 버블링/캡처 + 전파 차단 -->
+  <section>
+    <h2>3) 버블링/캡처 순서 로그 + 전파 차단 실험</h2>
+    <label style="display:block; margin-bottom:8px;">
+      <input type="checkbox" id="stopPropagationToggle" />
+      <span>버튼에서 <code>stopPropagation()</code> 사용</span>
+    </label>
+    <div id="outer">
+      OUTER
+      <div id="inner">
+        INNER
+        <button id="btn">BTN</button>
+      </div>
+    </div>
+    <div class="log" id="phaseLog"></div>
+  </section>
+
+  <!-- 4) 접근성 – 키보드로 활성화되는 커스텀 버튼 -->
+  <section>
+    <h2>4) 접근성 – 키보드로 활성화되는 커스텀 버튼</h2>
+    <div id="like" class="btn-like" role="button" tabindex="0" aria-pressed="false">👍 좋아요</div>
+    <div class="hint">Enter/Space 키로도 토글됩니다.</div>
+  </section>
+
+  <!-- 5) (선택) 성능 – 스크롤 핸들러 최적화 -->
+  <section>
+    <h2>5) (선택) 성능 – 스크롤 핸들러 최적화 (<code>passive + throttle(100ms)</code>)</h2>
+    <div class="log" id="scrollLog">스크롤 로그: (최신 10개)</div>
+    <div class="tall"></div>
+  </section>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
+

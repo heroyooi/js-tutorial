@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>lesson06 - 클래스 & 상속 과제 실습</title>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    h1 { margin-bottom: 8px; }
+    section { margin-bottom: 28px; }
+    pre {
+      background: #0b1020;
+      color: #d6e2ff;
+      padding: 10px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    button {
+      padding: 6px 12px;
+      margin-top: 8px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button:hover { background: #f3f3f3; }
+    .output {
+      margin-top: 8px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fafafa;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>lesson06 - 클래스 & 상속 과제 실습</h1>
+  <p>버튼 클릭 시 콘솔과 화면에 결과가 표시됩니다.</p>
+
+  <section>
+    <h2>1) 기본 클래스 Book</h2>
+    <pre><code>class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+  info() {
+    console.log(`제목: ${this.title}, 저자: ${this.author}`);
+  }
+}</code></pre>
+    <button id="btn-task1">실행</button>
+    <div class="output" id="out-task1"></div>
+  </section>
+
+  <section>
+    <h2>2) 상속 활용 – EBook</h2>
+    <pre><code>class EBook extends Book {
+  constructor(title, author, fileSize) {
+    super(title, author);
+    this.fileSize = fileSize;
+  }
+  info() {
+    console.log(
+      `제목: ${this.title}, 저자: ${this.author}, 파일 용량: ${this.fileSize}MB`
+    );
+  }
+}</code></pre>
+    <button id="btn-task2">실행</button>
+    <div class="output" id="out-task2"></div>
+  </section>
+
+  <section>
+    <h2>3) super 활용 – 부모 info() 호출</h2>
+    <pre><code>class EBook2 extends Book {
+  constructor(title, author, fileSize) {
+    super(title, author);
+    this.fileSize = fileSize;
+  }
+  info() {
+    super.info();
+    console.log(`파일 용량: ${this.fileSize}MB`);
+  }
+}</code></pre>
+    <button id="btn-task3">실행</button>
+    <div class="output" id="out-task3"></div>
+  </section>
+
+  <section>
+    <h2>(보너스) toString 활용</h2>
+    <pre><code>class BookPretty extends Book {
+  toString() {
+    return `📚 ${this.title} — ${this.author}`;
+  }
+}</code></pre>
+    <button id="btn-task4">실행</button>
+    <div class="output" id="out-task4"></div>
+  </section>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
+
