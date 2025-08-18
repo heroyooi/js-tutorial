@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mini SPA</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      nav a {
+        margin-right: 12px;
+        text-decoration: none;
+        color: blue;
+      }
+      nav a.active {
+        font-weight: bold;
+        color: darkred;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        padding: 4px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#/list">목록</a>
+      <a href="#/about">소개</a>
+    </nav>
+    <main id="app" class="container"></main>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
